@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar/nav'
 import { getCurrentUser } from './actions/getCurrentUser'
 import ToasterProvider from '@/provider/ToastProvider'
 import Alert from '@/components/Visible'
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ModalProvider />
 
         {children}
+        <Analytics />
       </body>
     </html>
   )
