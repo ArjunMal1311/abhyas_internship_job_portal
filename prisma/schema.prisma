@@ -1,5 +1,5 @@
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -34,11 +34,11 @@ model Listing {
 }
 
 model Application {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
   name      String
   email     String
-  listingId String   @db.ObjectId
-  createdAt DateTime @default(now())
+  listingId String    @db.ObjectId
+  createdAt DateTime? @default(now())
 
   listing Listing @relation(fields: [listingId], references: [id])
 }

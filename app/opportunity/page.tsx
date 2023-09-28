@@ -15,7 +15,7 @@ const ServerForm = async () => {
                     <div className='text-2xl font-bold'>
                         Add Job Listing
                     </div>
-                    <div className='w-1/4'>
+                    <div className='sm:w-1/4 w-full px-4'>
                         <FormAddJob currentUser={currentUser.currentUser} />
                     </div>
                 </div></>}

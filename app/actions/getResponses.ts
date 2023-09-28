@@ -10,9 +10,27 @@ export default async function getAllResponses() {
         }
 
         const applications = await prisma.application.findMany({});
-        console.log(applications);
 
-        return applications;
+        const applicationDetails = await Promise.all(applications.map(async (application) => {
+            const listing = await prisma.listing.findUnique({
+                where: {
+                    id: application.listingId,
+                },
+                select: {
+                    title: true,
+                },
+            });
+
+            return {
+                name: application.name,
+                email: application.email,
+                listingTitle: listing?.title || "Listing not found", 
+            };
+        }));
+
+        
+
+        return applicationDetails;
     } catch (error: any) {
         throw new Error(error);
     }

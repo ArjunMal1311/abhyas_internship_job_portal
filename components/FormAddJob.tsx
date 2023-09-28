@@ -48,7 +48,7 @@ const FormAddJob = ({ currentUser }: UserProps) => {
         }
     }
     return (
-        <div>
+        <div className=''>
             {currentUser.isAdmin && <>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
