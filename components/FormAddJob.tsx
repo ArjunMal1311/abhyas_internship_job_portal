@@ -7,6 +7,7 @@ import { User } from '@prisma/client';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
 import * as z from "zod";
 
 const formSchema = z.object({
@@ -43,8 +44,10 @@ const FormAddJob = ({ currentUser }: UserProps) => {
             await axios.post("/api/listing", values);
             form.reset();
             router.refresh();
+            toast.success("Added")
         } catch (error) {
             console.log(error);
+            toast.error("Went Wrong")
         }
     }
     return (

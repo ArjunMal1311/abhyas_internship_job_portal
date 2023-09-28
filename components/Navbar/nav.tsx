@@ -51,12 +51,12 @@ const Navbar = ({ currentUser }: NavbarProps) => {
                         <div className='absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm hover:cursor-pointer border-2'>
                             <div>
                                 <>
-                                    {currentUser && <div className='px-4 py-3 hover:bg-neutral-300 transition font-semibold cursor-pointer'>Hello, {currentUser.name}</div>}
-                                    <div className='px-4 py-3 hover:bg-neutral-300 transition font-semibold cursor-pointer' onClick={() => router.push('/listing')}>Listings</div>
-                                    <div className='px-4 py-3 hover:bg-neutral-300 transition font-semibold cursor-pointer' onClick={() => router.push('/responses')}>Responses</div>
-                                    {currentUser?.isAdmin && <div className='px-4 py-3 hover:bg-neutral-300 transition font-semibold cursor-pointer' onClick={() => router.push('/opportunity')}>Add Listing</div>}
-                                    {currentUser && <div className='px-4 py-3 hover.bg-neutral-300 transition font-semibold cursor-pointer' onClick={() => signOut()}>Sign Out</div>}
-                                    {!currentUser && <div className='px-4 py-3 hover.bg-neutral-300 transition font-semibold cursor-pointer' onClick={() => router.push("/login")}>Sign in</div>}
+                                    {currentUser && <div className='px-4 py-3 hover:bg-neutral-300 transition font-semibold cursor-pointer select-none'>Hello, {currentUser.name}</div>}
+                                    <div className='px-4 py-3 hover:bg-neutral-300 transition font-semibold cursor-pointer select-none' onClick={() => router.push('/listing')}>Listings</div>
+                                    <div className='px-4 py-3 hover:bg-neutral-300 transition font-semibold cursor-pointer select-none' onClick={() => router.push('/responses')}>Responses</div>
+                                    {currentUser?.isAdmin && <div className='px-4 py-3 hover:bg-neutral-300 transition font-semibold cursor-pointer select-none' onClick={() => router.push('/opportunity')}>Add Listing</div>}
+                                    {currentUser && <div className='px-4 py-3 hover.bg-neutral-300 transition font-semibold cursor-pointer select-none' onClick={() => signOut()}>Sign Out</div>}
+                                    {!currentUser && <div className='px-4 py-3 hover.bg-neutral-300 transition font-semibold cursor-pointer select-none' onClick={() => router.push("/login")}>Sign in</div>}
                                 </>
                             </div>
                         </div>
